@@ -1,7 +1,9 @@
+COLORS = %w[yellow green blue purple red orange]
+
 class Board
   attr_reader :board, :turns
   def initialize
-    @turns = 12
+    @turns = 0
     @board = Array.new(13){Array.new(5,"")}
   end
 
@@ -12,7 +14,25 @@ class Board
       puts "============================="
     end
   end
+
+  def get_secret_code
+    secret_code = Array.new(4){COLORS.sample}
+  end
+
+  def put_color(color, place)
+    board[turns][]
+  end
+
+  def update_row(guess)
+    board[turns][0..4] = guess
+  end
+
+  def feedback
+    
+  end
 end
 
 b = Board.new
 b.print_board
+b.get_secret_code
+b.update_row([1,2,3,4])

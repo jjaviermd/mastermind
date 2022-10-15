@@ -5,7 +5,7 @@ def get_secret_code
 end
 
 def pick_color
-  puts "Pick a color\n
+  puts "\nPick a color\n
         1 -yellow\n
         2 -green\n
         3 -blue\n

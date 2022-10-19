@@ -1,4 +1,4 @@
-require "byebug"
+
 module ColorsTools
 
   COLORS = %w[yellow green blue purple red orange]
@@ -11,7 +11,6 @@ module ColorsTools
           4 -purple
           5 -red
           6 -orange\n"
-          #byebug
     num_code = gets.chomp.split("").map { |n| n.to_i - 1}
   end
 
@@ -29,9 +28,9 @@ module ColorsTools
   def self.to_colors(code)
     code.map{ |n| COLORS[n]}
   end
-end
 
-test = ColorsTools.manual_combination
-puts ColorsTools.to_colors(test) if ColorsTools.valid_nums?(test)
-ColorsTools.error unless ColorsTools.valid_nums?(test)
+  def self.random_color
+    Array.new(4){COLORS.sample}
+  end
+end
 

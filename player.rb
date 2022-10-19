@@ -1,4 +1,4 @@
-require "./board.rb"
+
 class Player
 
   attr_reader :name

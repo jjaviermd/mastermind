@@ -4,23 +4,22 @@ class HumanPlayer
 
   include ColorsTools
 
-  #attr_reader :guess
-
+  attr_reader :guess
+   
   def initialize
     @guess = Array.new
   end
 
-  def guess
+  def set_guess
     i = ColorsTools.manual_combination
     unless ColorsTools.valid_nums?(i)
       ColorsTools.error
-      guess
+      set_guess
     end
-    ColorsTools.to_colors(i)
+    @guess = ColorsTools.to_colors(i)
   end
 
-
+  def clear_guess
+    @guess.clear
+  end
 end
- 
-mary = HumanPlayer.new
-p mary.guess

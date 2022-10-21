@@ -4,7 +4,7 @@
 module ColorsTools
   # Valid colors are yellow, green, blue, prurple and orange
   COLORS = %w[yellow green blue purple red orange]
-  # \\#manual_combination: Allows to select a combinantion of four intergers
+  # #manual_combination: Allows to select a combinantion of four intergers
   # from 1 to 6. eache one representing a color. 
   #returns an array of those intergers
   def self.manual_combination
@@ -20,7 +20,7 @@ module ColorsTools
   # #valid_nums?: Takes an array as arguments. returns true if the array's
   # contents are four intergers from 1 to 6 each. returns false otherwise.
   def self.valid_nums?(code)
-    if code.length == 4 && code.all? { |n| n.between?(1, 5)}
+    if code.length == 4 && code.all? { |n| n.between?(0, 5)}
       return true
     end
     false
@@ -40,3 +40,5 @@ module ColorsTools
   end
 end
 
+i = [4,3,1,0]
+p ColorsTools.valid_nums?(i)

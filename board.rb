@@ -1,4 +1,3 @@
-COLORS = %w[yellow green blue purple red orange]
 
 class Board
   attr_reader :board, :turns

@@ -39,6 +39,3 @@ module ColorsTools
     Array.new(4){COLORS.sample}
   end
 end
-
-i = [4,3,1,0]
-p ColorsTools.valid_nums?(i)

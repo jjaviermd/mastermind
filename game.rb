@@ -1,7 +1,7 @@
 
 class Game
   def initialize
-    @secret_code = Array.new
+    @secret_line = Array.new
     @table = Array.new
   end
 end

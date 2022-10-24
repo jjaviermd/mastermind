@@ -1,11 +1,11 @@
-## 
+##
 # This module provides tools to geneate a combination of up to 4 colors.
 
 module ColorsTools
   # Valid colors are yellow, green, blue, prurple and orange
   COLORS = %w[yellow green blue purple red orange]
   # #manual_combination: Allows to select a combinantion of four intergers
-  # from 1 to 6. eache one representing a color. 
+  # from 1 to 6. eache one representing a color.
   #returns an array of those intergers
   def self.manual_combination
     puts "\nPick four colors\n

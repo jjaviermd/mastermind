@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './colors_module'
 ## HumanPlayer class allows to create instances of human playersn for mastermind game.
 class HumanPlayer

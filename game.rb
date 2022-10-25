@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 %w[./pc_player ./human_player].each { |file| require file }
 
 class Game
@@ -11,7 +13,7 @@ class Game
 
   def compare(a, b)
     @attemps -= 1
-    feedback_zero if a.intersection(b).length == 0
+    feedback_zero if a.intersection(b).length.zero?
 
     if a == b
       same_code_feedback
@@ -61,9 +63,10 @@ class Game
         Y -Yes
         N -No'
     response = gets.chomp
-    if response == 'y'
+    case response
+    when 'y'
       @restart = true
-    elsif response == 'n'
+    when 'n'
       restart = false
     else
       puts 'Type y or n please'

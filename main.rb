@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 %w[./pc_player ./human_player ./game ./colors_module].each { |file| require file }
 
 def round
@@ -12,9 +14,9 @@ def round
   until game.attemps <= 0
     player.set_guess
     game.compare(player.guess, ia.secret_code)
-    game.turns_left if game.attemps > 0
+    game.turns_left if game.attemps.positive?
     player.clear_guess
-    game.game_over if game.attemps == 0
+    game.game_over if game.attemps.zero?
 
     next unless game.terminate
 

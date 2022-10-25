@@ -15,20 +15,17 @@ def round
     game.turns_left if game.attemps > 0
     player.clear_guess
     game.game_over if game.attemps == 0
-    #if game.terminate == true
-    if game.terminate
-    #ask retry?
-    game.retry?
-     #if retry returns true
-     if game.restart == true
-       round
-    else
-      puts "Thanks for playing"
-      break
-     end
-  end
-  end
 
+    if game.terminate
+      game.retry?
+        if game.restart == true
+          round
+        else
+        puts "Thanks for playing"
+        break
+        end
+    end
+  end
 end
 
 round

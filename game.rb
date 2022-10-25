@@ -1,7 +1,6 @@
 
 %w[./pc_player ./human_player].each { |file| require file}
 
-
 class Game
     attr_reader :attemps, :terminate, :restart
 
@@ -64,8 +63,8 @@ class Game
 
     def retry?
       puts %q[Retry?
-        Y -yes
-        N - no]
+        Y -Yes
+        N -No]
       response = gets.chomp
      if response == "y"
       @restart =  true
@@ -76,6 +75,4 @@ class Game
       retry?
      end
     end
-
-
 end

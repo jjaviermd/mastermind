@@ -9,21 +9,21 @@ def round
   ia.set_secret_code
   game.game_start(ia.secret_code)
 
-  until game.attemps <= 0 do
+  until game.attemps <= 0
     player.set_guess
     game.compare(player.guess, ia.secret_code)
     game.turns_left if game.attemps > 0
     player.clear_guess
     game.game_over if game.attemps == 0
 
-    if game.terminate
-      game.retry?
-        if game.restart == true
-          round
-        else
-        puts "Thanks for playing"
-        break
-        end
+    next unless game.terminate
+
+    game.retry?
+    if game.restart == true
+      round
+    else
+      puts 'Thanks for playing'
+      break
     end
   end
 end

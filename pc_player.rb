@@ -1,7 +1,6 @@
-require "./colors_module"
+require './colors_module'
 
 class PcPlayer
-
   include ColorsTools
 
   attr_reader :secret_code

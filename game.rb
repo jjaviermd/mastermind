@@ -3,11 +3,11 @@
 
 
 class Game
-    attr_reader :attemps, :game_over
+    attr_reader :attemps, :terminate
 
     def initialize
       @attemps = 12
-      @game_over = false
+      @terminate = false
     end
 
     def compare(a,b)
@@ -50,18 +50,28 @@ class Game
       puts "\n\tCongratulations! You broke the secret code"
     end
 
-    def turns
-      puts "\n#{attemps} attemps left" if attemps > 0
-      if attemps == 0
+    def turns_left
+      puts "\n#{self.attemps} attemps left"
+    end
+
+    def game_over
+        @terminate = true
         puts "Game over!"
-      end
     end
 
     def retry?
       puts %q[Retry?
         Y -yes
         N - no]
-      gets.chomp
+      response = gets.chomp
+     if response == "y"
+      return true
+     elsif response == "n"
+      return false
+     else
+      puts "Type y or n please"
+      retry?
+     end
     end
 
 

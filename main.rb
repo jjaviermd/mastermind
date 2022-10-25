@@ -11,6 +11,7 @@ game.game_start(ia.secret_code)
 until game.attemps <= 0 do
   player.set_guess
 game.compare(player.guess, ia.secret_code)
-game.turns
+game.turns_left if game.attemps > 0
+game.retry? if game.game_over
 player.clear_guess
 end

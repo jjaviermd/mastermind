@@ -3,11 +3,12 @@
 
 
 class Game
-    attr_reader :attemps, :terminate
+    attr_reader :attemps, :terminate, :restart
 
     def initialize
       @attemps = 12
       @terminate = false
+      @restart = false
     end
 
     def compare(a,b)
@@ -48,6 +49,7 @@ class Game
 
     def same_code_feedback
       puts "\n\tCongratulations! You broke the secret code"
+      self.game_over
     end
 
     def turns_left
@@ -57,6 +59,7 @@ class Game
     def game_over
         @terminate = true
         puts "Game over!"
+
     end
 
     def retry?
@@ -65,9 +68,9 @@ class Game
         N - no]
       response = gets.chomp
      if response == "y"
-      return true
+      @restart =  true
      elsif response == "n"
-      return false
+      restart = false
      else
       puts "Type y or n please"
       retry?

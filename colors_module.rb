@@ -1,3 +1,4 @@
+require 'io/console'
 # frozen_string_literal: true
 
 ##
@@ -17,7 +18,7 @@ module ColorsTools
           4 -purple
           5 -red
           6 -orange\n"
-    num_code = gets.chomp.split('').map { |n| n.to_i - 1 }
+    num_code = STDIN.noecho(&:gets).chomp.split('').map { |n| n.to_i - 1 }
   end
 
   # #valid_nums?: Takes an array as arguments. returns true if the array's

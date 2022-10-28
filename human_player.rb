@@ -20,7 +20,6 @@ class HumanPlayer
       set_guess
     end
     @guess = ColorsTools.to_colors(i)
-    puts guess
   end
 
   # #clear guess: clear content of @guess.

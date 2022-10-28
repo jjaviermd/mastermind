@@ -29,19 +29,19 @@ class Game
   end
 
   def game_start(current_secret)
-    puts "\nSecret code live.\n\nTurns left:#{attemps}" if current_secret
+    puts "\n\nSecret code live.\n\nTurns left:#{attemps}" if current_secret
   end
 
   def feedback_zero
-    puts "\tZero coincidences"
+    puts "\t\nZero coincidences"
   end
 
   def relative_fedback
-    puts "\tColor missplaced"
+    puts "\t\nColor missplaced"
   end
 
   def absolute_feedback
-    puts "\tColor properly placed"
+    puts "\t\nColor properly placed"
   end
 
   def same_code_feedback

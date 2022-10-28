@@ -1,6 +1,4 @@
 require 'io/console'
-# frozen_string_literal: true
-
 ##
 # This module provides tools to geneate a combination of up to 4 colors.
 

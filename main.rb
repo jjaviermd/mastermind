@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-require "byebug"
 %w[./pc_player ./human_player ./game ./colors_module].each { |file| require file }
 
 def round
@@ -44,7 +42,6 @@ def round_vs_human
   until game.attemps <= 0
     breaker.set_guess
     puts breaker.guess
-    #byebug
     game.compare(breaker.guess, coder.guess)
     game.turns_left if game.attemps.positive?
     breaker.clear_guess

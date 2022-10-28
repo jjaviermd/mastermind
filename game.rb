@@ -1,7 +1,6 @@
-# frozen_string_literal: true
 
 %w[./pc_player ./human_player].each { |file| require file }
-
+# This class creates agame instances.
 class Game
   attr_reader :attemps, :terminate, :restart
 
@@ -10,7 +9,13 @@ class Game
     @terminate = false
     @restart = false
   end
-
+  # compare takes two array of colors as arguments. and returns
+  # differents feedbacks based upon the result.
+  # "zero coincidences" if arrays don't share any value.
+  # "color missplaced" if one or more color guesed are in the secret code
+  # but not en that position.
+  # "color properly placed" if one or more guessed color are in the secret code
+  # in that excat position.
   def compare(a, b)
     @attemps -= 1
     feedback_zero if a.intersection(b).length.zero?
@@ -27,7 +32,7 @@ class Game
       end
     end
   end
-
+  # Initialize the game
   def game_start(current_secret)
     puts "\n\nSecret code live.\n\nTurns left:#{attemps}" if current_secret
   end
@@ -57,7 +62,8 @@ class Game
     @terminate = true
     puts 'Game over!'
   end
-
+  # Ask the player if wnats to play another match.
+  # Only posibles answers are y for yes and n for no.
   def retry?
     puts 'Retry?
         Y -Yes
